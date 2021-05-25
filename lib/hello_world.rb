@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'nokogiri'
 require 'open-uri'
+require 'mechanize'
 require_relative "hello_world/version"
 
 module HelloWorld
@@ -8,10 +9,10 @@ module HelloWorld
   # Your code goes here...
 
   def self.greet(url)
-
-    html = open("#{url}").read
-    nokogiri_doc = Nokogiri::HTML(html)
-    puts nokogiri_doc
+    puts url
+    agent = Mechanize.new
+    page = agent.get(url)
+    puts page
     end
   end
 
