@@ -10,7 +10,7 @@ module HelloWorld
 
   def self.greet(url)
     agent = Mechanize.new { |agent|
-      agent.user_agent_alias = 'Mac Safari 4'
+      agent.user_agent_alias = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3'
     }
     agent.follow_meta_refresh = true
     agent.follow_meta_refresh = true
