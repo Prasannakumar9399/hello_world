@@ -9,7 +9,7 @@ module HelloWorld
 
   def self.greet(url)
 
-    html = open("{url}").read
+    html = open("#{url}").read
     nokogiri_doc = Nokogiri::HTML(html)
     puts nokogiri_doc
     end
