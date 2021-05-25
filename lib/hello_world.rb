@@ -9,9 +9,9 @@ module HelloWorld
 
   def self.greet(url)
 
-    html = open("https://www.linkedin.com/in/harsh-kesarwani-519883134/")
-    doc = Nokogiri::HTML(html)
-    puts doc
+    html = open("{url}").read
+    nokogiri_doc = Nokogiri::HTML(html)
+    puts nokogiri_doc
     end
   end
 
