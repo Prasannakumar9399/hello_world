@@ -15,6 +15,6 @@ module HelloWorld
     #visit page
     page = agent.get("#{url}")
     puts page
-    end
   end
+end
 
