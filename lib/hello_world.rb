@@ -8,10 +8,13 @@ module HelloWorld
   # Your code goes here...
 
   def self.greet(url)
-    uri = URI.parse(url)
-    doc = Nokogiri::HTML(URI.open(uri,"User-agent"=> "Mozilla/5.0 (X11;U;Linux 2.4.2.-2 i586; en-us;m18) Gecko/200010131 Netscape6/6.01"))
-    puts doc
-
+    agent = Mechanize.new { |agent|
+      agent.user_agent_alias = 'Mac Safari 4'
+    }
+    agent.follow_meta_refresh = true
+    #visit page
+    page = agent.get("#{url}")
+    puts page
     end
   end
 
