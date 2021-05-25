@@ -1,12 +1,18 @@
 # frozen_string_literal: true
-
+require 'nokogiri'
+require 'open-uri'
 require_relative "hello_world/version"
 
 module HelloWorld
   class Error < StandardError; end
   # Your code goes here...
 
-  def self.greet(name)
-    puts "Hello, #{name}! I'm Ruby"
+  def self.greet(url)
+    # puts "Hello, #{name}! I'm Ruby"
+    doc = Nokogiri::HTML(open(url))
+    doc.xpath('//*[@id="ember530"]/div[2]/div[2]/div/div[1]/h1').each do |temp|
+      puts temp
+      end
+    end
   end
-end
+
