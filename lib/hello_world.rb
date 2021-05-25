@@ -9,7 +9,11 @@ module HelloWorld
 
   def self.greet(url)
     # puts "Hello, #{name}! I'm Ruby"
-    doc = Nokogiri::HTML(open(url))
+    # URI.open("http://www.ruby-lang.org/") {|f|
+    #   f.each_line {|line| p line}
+    # }
+
+    doc = Nokogiri::HTML(URI.open(url))
     doc.xpath('//*[@id="ember530"]/div[2]/div[2]/div/div[1]/h1').each do |temp|
       puts temp
       end
