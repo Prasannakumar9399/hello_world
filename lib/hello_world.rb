@@ -13,7 +13,8 @@ module HelloWorld
     #   f.each_line {|line| p line}
     # }
 
-    doc = Nokogiri::HTML(URI.open(url))
+    doc = Nokogiri::HTML(URI.open(url,"User-Agent"=>"Ruby/ruby 2.7.3p183 "))
+    puts doc
     doc.xpath('//*[@id="ember530"]/div[2]/div[2]/div/div[1]/h1').each do |temp|
       puts temp
       end
