@@ -8,16 +8,10 @@ module HelloWorld
   # Your code goes here...
 
   def self.greet(url)
-    # puts "Hello, #{name}! I'm Ruby"
-    # URI.open("http://www.ruby-lang.org/") {|f|
-    #   f.each_line {|line| p line}
-    # }
-    uri = URI.parse(url)
-    doc = Nokogiri::HTML(URI.open(uri,"User-Agent"=> "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)"))
-    puts doc
-    doc.xpath('//*[@id="ember530"]/div[2]/div[2]/div/div[1]/h1').each do |temp|
-      puts temp
-      end
+
+    html = open("https://www.linkedin.com/in/harsh-kesarwani-519883134/")
+    doc = Nokogiri::HTML(html)
+    put doc
     end
   end
 
