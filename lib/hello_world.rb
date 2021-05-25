@@ -8,8 +8,9 @@ module HelloWorld
   # Your code goes here...
 
   def self.greet(url)
-    doc = Nokogiri::HTML(open("#{url}","User-Agent"=>"Mac Safari 4","transfer-encoding"=>"chunked","content-type"=>"text/htm;","Content-Encoding"=>"gzip"))
-    puts doc
+    URI.open("#{url}") {|f|
+      f.each_line {|line| p line}
+    }
   end
 end
 
