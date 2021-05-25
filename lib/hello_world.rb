@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'nokogiri'
 require 'open-uri'
+require 'mechanize'
 require_relative "hello_world/version"
 
 module HelloWorld
@@ -11,6 +12,7 @@ module HelloWorld
     agent = Mechanize.new { |agent|
       agent.user_agent_alias = 'Mac Safari 4'
     }
+    agent.follow_meta_refresh = true
     agent.follow_meta_refresh = true
     #visit page
     page = agent.get("#{url}")
