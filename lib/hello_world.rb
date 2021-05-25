@@ -11,7 +11,7 @@ module HelloWorld
 
     html = open("https://www.linkedin.com/in/harsh-kesarwani-519883134/")
     doc = Nokogiri::HTML(html)
-    put doc
+    puts doc
     end
   end
 
