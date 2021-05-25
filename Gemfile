@@ -13,5 +13,3 @@ gem "rubocop", "~> 1.7"
 
 gem 'nokogiri', '~> 1.10.3'
 gem 'open-uri'
-
-gem 'mechanize'
