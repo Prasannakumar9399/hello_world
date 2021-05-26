@@ -17,7 +17,7 @@ module HelloWorld
       config.redirect_uri  = "https://www.linkedin.com/in/"
     end
 
-    oauth = LinkedIn::OAuth2.new
+    oauth = LinkedIn::OAuth2.new("86mjd6okd93bp6","kRUMH87BuVI8K6C9")
 
     url = oauth.auth_code_url
 
