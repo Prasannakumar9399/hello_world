@@ -7,8 +7,9 @@ require_relative "hello_world/version"
 module HelloWorld
   class Error < StandardError; end
   # Your code goes here...
+  @code = "";
+  def self.greet(purl,c)
 
-  def self.greet(purl)
 
     LinkedIn.configure do |config|
       config.client_id     = ENV["86mjd6okd93bp6"]
@@ -22,8 +23,9 @@ module HelloWorld
     url = oauth.auth_code_url
     puts url
 
-    code = "AQQjYhlToCQF8g52WPVdqdnzepJH1jeDhrg1x3WRFUqOth646FER6gcwpJtZ0GwhuiWaTorIMVBhJ4NtZw7fFOnaDLoQpQXiBtcuX0xzbu6WWBpHDR5nR-LV2YBcOxci4QMrDrJy6JIhAWGtmb3gnLccI8ajx0liXz552zpCdX2Y_XIpYBh045XTdvs_vrypi_XdfK0Y-zWxzOa1Mso&state=ePhdJXSLXg2Wi3E0bZhDiyFnpI6IR4gTA%2F5VEMdgslg%3D"
-    #
+    # code = "AQQjYhlToCQF8g52WPVdqdnzepJH1jeDhrg1x3WRFUqOth646FER6gcwpJtZ0GwhuiWaTorIMVBhJ4NtZw7fFOnaDLoQpQXiBtcuX0xzbu6WWBpHDR5nR-LV2YBcOxci4QMrDrJy6JIhAWGtmb3gnLccI8ajx0liXz552zpCdX2Y_XIpYBh045XTdvs_vrypi_XdfK0Y-zWxzOa1Mso&state=ePhdJXSLXg2Wi3E0bZhDiyFnpI6IR4gTA%2F5VEMdgslg%3D"
+
+    code = c;
     access_token = oauth.get_access_token(code)
     #
     api = LinkedIn::API.new(access_token)
