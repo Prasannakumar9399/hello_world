@@ -16,3 +16,5 @@ gem 'open-uri'
 gem "linkedin-v2", "~> 0.1.0"
 
 gem "linkedin-oauth2", "~> 1.0"
+
+gem "selenium-webdriver", "~>3.142.7"
