@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'nokogiri'
 require 'open-uri'
+require 'linkedin-oauth2'
 require_relative "hello_world/version"
 
 module HelloWorld
