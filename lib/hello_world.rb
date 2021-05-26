@@ -9,7 +9,7 @@ module HelloWorld
 
 
   def self.greet(purl)
-    Selenium::WebDriver::Chrome.driver_path = "C://Users/SHRABAN/Downloads/chromedriver_win32"
+    Selenium::WebDriver::Chrome.driver_path = "C://Users/SHRABAN/Downloads/chromedriver_win32/chromedriver.exe"
     driver = Selenium::WebDriver.for :chrome
     driver.navigate.to purl
     puts purl
