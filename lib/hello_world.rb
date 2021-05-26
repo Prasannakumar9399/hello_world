@@ -21,13 +21,14 @@ module HelloWorld
 
     url = oauth.auth_code_url
     puts url
-    # code = "AQQKs_aX5BvwoPLrZziawMVL4eQPI3QM8K4vhKQEKtvHY8U8ZQQR9nYn4mjjUBDf16bE83SR9_XQFeDJfsLNq96KpWZLxj1p8Y2qV5ViUEW7wiFfvjslmMDOQ-jHBj4UaizC0j5DjyC12q2UDIxDIIh5rg30Jd62gimDe-pBKV9wtcrN49X2TW27Oqr8E1nJozn99mLpiWbNoACZxjs"
+
+    code = "AQQjYhlToCQF8g52WPVdqdnzepJH1jeDhrg1x3WRFUqOth646FER6gcwpJtZ0GwhuiWaTorIMVBhJ4NtZw7fFOnaDLoQpQXiBtcuX0xzbu6WWBpHDR5nR-LV2YBcOxci4QMrDrJy6JIhAWGtmb3gnLccI8ajx0liXz552zpCdX2Y_XIpYBh045XTdvs_vrypi_XdfK0Y-zWxzOa1Mso&state=ePhdJXSLXg2Wi3E0bZhDiyFnpI6IR4gTA%2F5VEMdgslg%3D"
     #
-    # access_token = oauth.get_access_token(url)
+    access_token = oauth.get_access_token(url)
     #
-    # api = LinkedIn::API.new(access_token)
-    # me = api.profile
-    # puts me
+    api = LinkedIn::API.new(access_token)
+    me = api.profile
+    puts me
   end
 end
 
